@@ -63,6 +63,8 @@
  *
  * You can set the maximum number of logs, font size, line height, offset, outline width, outline color, etc.
  *
+ * ver.1.0.1: You can now specify the width of the battle log.
+ *
  *
  * This plugin does not require any special credit notation, but if you want to give credit, please mention strayedwave.
  */
@@ -131,6 +133,8 @@
  * バトルログは累積されていき、一定件数を超えた場合は古いログから削除されます。
  *
  * 最大ログ件数や、ログのフォントサイズ、行の高さ、オフセット、アウトライン幅、アウトライン色などを設定できます。
+ *
+ * ver.1.0.1: バトルログの幅を指定出来るようになりました。
  *
  *
  * このプラグインは特にクレジット表記などは必要ありませんが、
