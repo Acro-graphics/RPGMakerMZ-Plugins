@@ -21,7 +21,7 @@ clearCache: プラグインで保存しているキャッシュを破棄しま�
 
 ![stwv_stwv_coloredBattleLog.jsのプラグインパラメータ](https://raw.githubusercontent.com/Acro-graphics/RPGMakerMZ-Plugins/refs/heads/images/images/coloredBattleLog_parameter.png)
 
-[stwv_coloredBattleLog.jsをダウンロード](https://raw.githubusercontent.com/Acro-graphics/RPGMakerMZ-Plugins/refs/heads/main/stwv_coloredBattleLog.js)
+[ダウンロード](https://raw.githubusercontent.com/Acro-graphics/RPGMakerMZ-Plugins/refs/heads/main/stwv_coloredBattleLog.js)
 
 ## 制作予定のプラグイン
 
