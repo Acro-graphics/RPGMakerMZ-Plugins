@@ -9,8 +9,8 @@ strayedwaveが制作したRPGMakerMZ向けプラグインの公開場所です�
 色コードはRPGMakerMZのシステム画像を参照しますので、適切な番号を指定してください。
 （#で始まる一般的なカラーコードは認識しません。）
 
-[stwv_coloredBattleLog.jsをダウンロード](https://raw.githubusercontent.com/Acro-graphics/RPGMakerMZ-Plugins/refs/heads/main/stwv_coloredBattleLog.js)
-
 ![stwv_stwv_coloredBattleLog.jsのプレビュー](https://raw.githubusercontent.com/Acro-graphics/RPGMakerMZ-Plugins/refs/heads/images/images/coloredBattleLog_preview.png)
 
 ![stwv_stwv_coloredBattleLog.jsのプラグインパラメータ](https://raw.githubusercontent.com/Acro-graphics/RPGMakerMZ-Plugins/refs/heads/images/images/coloredBattleLog_parameter.png)
+
+[stwv_coloredBattleLog.jsをダウンロード](https://raw.githubusercontent.com/Acro-graphics/RPGMakerMZ-Plugins/refs/heads/main/stwv_coloredBattleLog.js)
