@@ -64,6 +64,7 @@
  * @desc Clears the cache of the colored battle log. (Be careful not to increase the cache too much)
  *
  * @help stwv_ColoredBattleLog.js
+ *
  * This plugin colors actor names, enemy names, item names, and skill names in the battle log.
  * You can register color codes and keywords to be colored from the plugin parameters.
  * The color codes refer to the system images of RPGMakerMZ, so specify the appropriate number.
@@ -147,6 +148,7 @@
  * @desc カラーバトルログのキャッシュを破棄します。（キャッシュの増やし過ぎには注意してください）
  *
  * @help stwv_ColoredBattleLog.js
+ *
  * バトルログ内のアクター名、エネミー名、アイテム名、スキル名に色をつけるプラグインです。
  * プラグインパラメータから色コードと色をつけるキーワードを登録することができます。
  * 色コードはRPGMakerMZのシステム画像を参照しますので、適切な番号を指定してください。
