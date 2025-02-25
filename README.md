@@ -18,8 +18,6 @@ strayedwaveが制作したRPGMakerMZ向けプラグインの公開場所です�
 
 ![stwv_accumulationBattleLog.jsのプラグインパラメータ](https://raw.githubusercontent.com/strayedwave/RPGMakerMZ-Plugins/refs/heads/images/images/stwv_accumulationBattleLog_parameter.png)
 
-
-
 [ダウンロード](https://raw.githubusercontent.com/strayedwave/RPGMakerMZ-Plugins/refs/heads/main/stwv_accumulationBattleLog.js)
 
 ### stwv_coloredBattleLog.js
