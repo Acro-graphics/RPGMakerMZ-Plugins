@@ -14,7 +14,9 @@ strayedwaveが制作したRPGMakerMZ向けプラグインの公開場所です�
 
 プラグインコマンドはありません。
 
-![stwv_accumulationBattleLog.jsのプレビュー]()
+![stwv_accumulationBattleLog.jsのプレビュー](https://raw.githubusercontent.com/strayedwave/RPGMakerMZ-Plugins/refs/heads/images/images/stwv_accumulationBattleLog_preview.png)
+
+![stwv_accumulationBattleLog.jsのプラグインパラメータ](https://raw.githubusercontent.com/strayedwave/RPGMakerMZ-Plugins/refs/heads/images/images/stwv_accumulationBattleLog_parameter.png)
 
 
 
