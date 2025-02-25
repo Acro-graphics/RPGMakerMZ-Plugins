@@ -49,6 +49,13 @@
  * @desc Set the outline color of the battle log. Default: rgba(0, 0, 0, 0.6)
  * @default rgba(0, 0, 0, 0.6)
  *
+ * @param logWidth
+ * @text Log Width
+ * @desc Set the width of the battle log window. Default: 0
+ * (If set to 0, the battle log will extend to the edge of the screen.)
+ * @type number
+ * @default 0
+ *
  * @help accumulationBattleLog.js
  *
  * This plugin accumulates battle logs.
@@ -111,6 +118,13 @@
  * @desc バトルログのアウトライン色を設定します デフォルト: rgba(0, 0, 0, 0.6)
  * @default rgba(0, 0, 0, 0.6)
  *
+ * @param logWidth
+ * @text ログ幅
+ * @desc バトルログウィンドウの幅を設定します デフォルト: 0
+ * (0にすると画面端までバトルログが伸びるようになります。)
+ * @type number
+ * @default 0
+ *
  * @help accumulationBattleLog.js
  *
  * バトルログを累積型にするプラグインです。
@@ -133,6 +147,7 @@
 	const offsetY = Number(parameters.offsetY || 0);
 	const outlineColor = parameters.outlineColor || "rgba(0, 0, 0, 0.6)";
 	const outlineWidth = Number(parameters.outlineWidth || 3);
+	const logWidth = Number(parameters.logWidth || 0);
 	const yOffsetMargin = 4; // 1行目の上部に猶予を持たせるためのマージン
 	const xOffsetMargin = 4; // 左部分に猶予を持たせるためのマージン
 
@@ -201,7 +216,7 @@
 
 	// ウィンドウの幅を計算する
 	Window_BattleLog.prototype.windowWidth = function () {
-		return Graphics.boxWidth - this.x;
+		return logWidth > 0 ? logWidth : Graphics.boxWidth - this.x;
 	};
 
 	const _BattleManager_endBattle = BattleManager.endBattle;
