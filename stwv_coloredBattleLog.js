@@ -179,7 +179,6 @@
  * @desc この色で色変えを行うキーワードのリスト
  * @default []
  */
-
 (() => {
 	const parameters = PluginManager.parameters("stwv_ColoredBattleLog");
 	const COLOR_ACTOR = Number(parameters["Actor Color"] || 1);
@@ -205,12 +204,10 @@
 		return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 	}
 
-	// キャッシュ用のMapを用意
-	const cache = new Map();
+	// キーワードと色の組み合わせ用キャッシュ
+	const replacementCache = new Map();
 
 	function colorizeKeywords(inputText) {
-		if (cache.has(inputText)) return cache.get(inputText);
-
 		let text = inputText;
 		const categories = [
 			{
@@ -253,15 +250,27 @@
 		for (const category of categories) {
 			if (!category.enabled) continue;
 			for (const name of category.names) {
+				const key = `${name}_${category.color}`;
+				// キーワードがテキスト中に存在するかチェック
 				const re = new RegExp(escapeRegExp(name), "g");
-				text = text.replace(re, `\\c[${category.color}]${name}\\c[0]`);
+				if (!re.test(text)) continue;
+				let replacement;
+				if (replacementCache.has(key)) {
+					replacement = replacementCache.get(key);
+				} else {
+					replacement = `\\c[${category.color}]${name}\\c[0]`;
+					replacementCache.set(key, replacement);
+					console.log(
+						`Cached keyword-color combination: ${name}, color: ${category.color}`,
+					);
+					// キャッシュサイズが上限を超えた場合、最も古い項目を削除
+					if (replacementCache.size > CACHE_SIZE) {
+						const firstKey = replacementCache.keys().next().value;
+						replacementCache.delete(firstKey);
+					}
+				}
+				text = text.replace(re, replacement);
 			}
-		}
-		cache.set(inputText, text);
-		// キャッシュ内の項目数が指定された最大項目数を超えた場合、最も古い項目を削除
-		if (cache.size > CACHE_SIZE) {
-			const firstKey = cache.keys().next().value;
-			cache.delete(firstKey);
 		}
 		return text;
 	}
@@ -274,11 +283,12 @@
 	const _Game_Map_setup = Game_Map.prototype.setup;
 	Game_Map.prototype.setup = function (mapId) {
 		_Game_Map_setup.call(this, mapId);
-		cache.clear();
+		// マップ移動時にキャッシュをクリア
+		replacementCache.clear();
 	};
 
 	// プラグインコマンドの登録
 	PluginManager.registerCommand("stwv_ColoredBattleLog", "clearCache", () => {
-		cache.clear();
+		replacementCache.clear();
 	});
 })();
