@@ -260,9 +260,11 @@
 				} else {
 					replacement = `\\c[${category.color}]${name}\\c[0]`;
 					replacementCache.set(key, replacement);
-					console.log(
-						`Cached keyword-color combination: ${name}, color: ${category.color}`,
-					);
+					if (Utils.isOptionValid("test")) {
+						console.log(
+							`Cached keyword-color combination: ${name}, color: ${category.color}`,
+						);
+					}
 					// キャッシュサイズが上限を超えた場合、最も古い項目を削除
 					if (replacementCache.size > CACHE_SIZE) {
 						const firstKey = replacementCache.keys().next().value;
