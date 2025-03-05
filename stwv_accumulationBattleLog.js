@@ -134,7 +134,9 @@
  *
  * 最大ログ件数や、ログのフォントサイズ、行の高さ、オフセット、アウトライン幅、アウトライン色などを設定できます。
  *
+ * ver.1.0.2: 描画周りの処理を最適化しました。
  * ver.1.0.1: バトルログの幅を指定出来るようになりました。
+ * ver.1.0.0: プラグイン公開
  *
  *
  * このプラグインは特にクレジット表記などは必要ありませんが、
@@ -176,6 +178,7 @@
 			this._accumulatedLogs.shift();
 		}
 		this._needsRefresh = true;
+		this.refreshAccumulatedLogs(); // ログが追加されたときにのみ再描画
 	};
 
 	Window_BattleLog.prototype.refreshAccumulatedLogs = function () {
@@ -209,7 +212,9 @@
 	const _Window_BattleLog_update = Window_BattleLog.prototype.update;
 	Window_BattleLog.prototype.update = function () {
 		_Window_BattleLog_update.call(this);
-		this.refreshAccumulatedLogs();
+		if (this._needsRefresh) {
+			this.refreshAccumulatedLogs();
+		}
 	};
 
 	// ウィンドウの高さを計算する
